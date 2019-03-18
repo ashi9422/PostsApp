@@ -1,0 +1,68 @@
+<div class="container">
+  <h2>This is using activated routers, snapshot.params and httpClient</h2>
+  <hr>
+  <br>
+  <h5>Wisthout using elvis operator <h4> <p>//// selectedHero?.name ///</p></h4></h5>
+  <div>
+      <form>
+          <div class="form-group row" ngForm>
+            <label for="id" class="col-sm-2 col-form-label">User ID</label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" name="id" id="id" [ngModel]="PostaData?.id">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="title" rows="3" name="title" [ngModel]=[PostaData?.title]></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row">
+              <label for="body" class="col-sm-2 col-form-label">Body</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="body" rows="6" name="body" [ngModel]=[PostaData?.body]></textarea>
+              </div>
+            </div>
+        </form>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <h5>Wisthout using elvis operator</h5>
+  <h6>The *ngIf directive keeps selectedHero off the DOM until it is selected and therefore becomes truthy.</h6>
+  <div *ngIf="PostaData">
+      <form>
+          <div class="form-group row" ngForm>
+            <label for="id" class="col-sm-2 col-form-label">User ID</label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" name="id" id="id" [(ngModel)]="PostaData.id">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="title" rows="3" name="title" [(ngModel)]="PostaData.title" ></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row">
+              <label for="body" class="col-sm-2 col-form-label">Body</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="body" rows="6" name="body" [(ngModel)]="PostaData.body"></textarea>
+              </div>
+            </div>
+        </form>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div *ngIf="PostaData">
+      <h2>{{PostaData.id}} details!</h2>
+      <div><label>id: </label>{{PostaData.id}}</div>
+      <div>
+        <label>title: </label>
+        <input [(ngModel)]="PostaData.title" placeholder="title"/>
+      </div>
+    </div>
+</div>

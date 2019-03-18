@@ -9,6 +9,7 @@
             <th scope="col">UserID</th>
             <th scope="col">ID</th>
             <th scope="col">Title</th>
+            <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -18,6 +19,7 @@
             <th>{{p.userId}}</th>
             <td>{{p.id}}</td>
             <td>{{p.title}}</td>
+            <th scope="col"><button type="button" class="btn"><a [routerLink]="['/posts', p.id]">View</a></button></th>
             <th scope="col"><button type="button" class="btn btn-info">Edit</button></th>
             <th scope="col"><button type="button" class="btn btn-danger">Delete</button></th>
 

@@ -8,12 +8,14 @@ import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { HttpModule} from '@angular/http'
+import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { UserService } from './services/user.service';
+import { OnePostComponent } from './one-post/one-post.component';
 
 const appRoutes: Routes = [
   { path: 'posts',      component: PostsComponent },
+  { path: 'posts/:id',      component: OnePostComponent },
   { path: 'comments',      component: CommentsComponent },
   { path: '',      component: HeaderComponent },
   
@@ -26,12 +28,13 @@ const appRoutes: Routes = [
     HeaderComponent,
     PostsComponent,
     CommentsComponent,
+    OnePostComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [ UserService],
   bootstrap: [AppComponent]

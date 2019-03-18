@@ -8,7 +8,7 @@ import { shouldCallLifecycleInitHook } from '@angular/core/src/view';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts:any[];
+  posts:any;
   names = [
     {
       "userId": 1,
@@ -22,7 +22,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
   this.userService.getPosts().subscribe( data => {
-      this.posts = data.json();
+      this.posts = data;
       //console.log(this.posts);
     },
     error => {

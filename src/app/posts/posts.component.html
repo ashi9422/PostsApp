@@ -1,0 +1,27 @@
+<div class="container">
+    <div align="center">
+        <h1>This is post Page</h1>
+        <h4>Using Services, Http and *ngFor</h4>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="table-success">
+            <th scope="col">UserID</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let p of posts">
+            <th>{{p.userId}}</th>
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <th scope="col"><button type="button" class="btn btn-info">Edit</button></th>
+            <th scope="col"><button type="button" class="btn btn-danger">Delete</button></th>
+
+          </tr>
+        </tbody>
+      </table>
+</div>
